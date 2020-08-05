@@ -34,13 +34,9 @@ just follow the guide below and stay notified of your build status.
 
     ```yaml
     after_success:
-      - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
-      - chmod +x send.sh
-      - ./send.sh success $WEBHOOK_URL
+      - curl -s https://raw.githubusercontent.com/rsdv/travis-ci-discord-webhook/master/send.sh | bash -s success $WEBHOOK_URL
     after_failure:
-      - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
-      - chmod +x send.sh
-      - ./send.sh failure $WEBHOOK_URL
+      - curl -s https://raw.githubusercontent.com/rsdv/travis-ci-discord-webhook/master/send.sh | bash -s failure $WEBHOOK_URL
     ```
 
 1.  Grab your coffee ☕ and enjoy! And, if you liked this, please ⭐**Star**
